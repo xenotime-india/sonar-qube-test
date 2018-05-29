@@ -13,4 +13,4 @@ script:
     -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
     -Dsonar.github.repository=xenotime-india/sonar-qube-test
     -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
-    -Dsonar.github.pullRequest=$PULL_REQUEST_ID
+    -Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
