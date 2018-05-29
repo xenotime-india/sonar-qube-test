@@ -1,0 +1,16 @@
+image: appirio/dx-appirio:latest
+
+variables:
+  SONAR_SERVER: "https://sonar.appirio.com"
+
+step:
+  script:
+    - adx sonar:config
+    - sonar-scanner
+      -Dsonar.sources=.
+      -Dsonar.host.url=$SONAR_SERVER
+      -Dsonar.login=$SONAR_LOGIN
+      -Dsonar.github.oauth=79e41aed4e4143e53c0fcce3e1c0241f3f27adc1
+      -Dsonar.github.repository=xenotime-india/sonar-qube-test
+      -Dsonar.github.pullRequest=$PULL_REQUEST_ID
+      -Dsonar.analysis.mode=publish
