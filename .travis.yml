@@ -10,4 +10,4 @@ env:
 
 script:
   # other script steps might be done before running the actual SonarQube analysis
-  - sonar-scanner -Dsonar.analysis.mode=preview -Dsonar.projectKey=sandeep-digital-sonar-test1 -Dsonar.projectName=sandeep-digital-sonar-test1 -Dsonar.host.url=$SONAR_SERVER -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN -Dsonar.login=$SONAR_TOKEN -Dsonar.github.pullRequest=$PULL_REQUEST_ID
+  - sonar-scanner -Dsonar.sources=. -Dsonar.analysis.mode=preview -Dsonar.projectKey=sandeep-digital-sonar-test1 -Dsonar.projectName=sandeep-digital-sonar-test1 -Dsonar.host.url=$SONAR_SERVER -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN -Dsonar.login=$SONAR_TOKEN -Dsonar.github.pullRequest=$PULL_REQUEST_ID
