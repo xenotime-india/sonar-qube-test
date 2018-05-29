@@ -15,7 +15,7 @@ script:
     -Dsonar.projectKey=sandeep-digital-sonar-test1
     -Dsonar.projectName=sandeep-digital-sonar-test1
     -Dsonar.host.url=https://sonar.appirio.com
-    -Dsonar.github.oauth=c200168225d4c43d851e631175041caea2b5b965
+    -Dsonar.github.oauth=ca497e58861c5d887fa465adc17306cd865cb6d7
     -Dsonar.github.repository=xenotime-india/sonar-qube-test
     -Dsonar.login=b636f8406b96bddae98ddb356c3ba34770685bdc
     -Dsonar.github.pullRequest=$PULL_REQUEST_ID
