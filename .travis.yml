@@ -1,7 +1,8 @@
 language: node_js
-script: -Dsonar.analysis.mode=preview
-        -Dsonar.github.pullRequest=$PULL_REQUEST_ID
-        -Dsonar.github.repository=myOrganisation/myProject
-        -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
-        -Dsonar.host.url=https://server/sonarqube
-        -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
+script: - sonar-scanner
+          -Dsonar.analysis.mode=preview
+          -Dsonar.github.pullRequest=$PULL_REQUEST_ID
+          -Dsonar.github.repository=myOrganisation/myProject
+          -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
+          -Dsonar.host.url=https://server/sonarqube
+          -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
