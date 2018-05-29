@@ -1,8 +1,10 @@
-language: node_js
-script: -sonar-scanner
-          -Dsonar.analysis.mode=preview
-          -Dsonar.github.pullRequest=$PULL_REQUEST_ID
-          -Dsonar.github.repository=myOrganisation/myProject
-          -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
-          -Dsonar.host.url=https://server/sonarqube
-          -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
+cache:
+directories:
+– $HOME/.m2
+– $HOME/.sonar/cache
+
+env:
+secure: a_very_long_hash_string_here
+jdk: oraclejdk8
+language: java
+script: mvn clean install sonar:sonar -Dsonar.analysis.mode=preview -Dsonar.github.pullRequest=$PULL_REQUEST_ID -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN -Dsonar.host.url=https://server/sonarqube -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
