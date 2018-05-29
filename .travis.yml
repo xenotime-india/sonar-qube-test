@@ -1,5 +1,5 @@
 language: node_js
-script: - sonar-scanner
+script: -sonar-scanner
           -Dsonar.analysis.mode=preview
           -Dsonar.github.pullRequest=$PULL_REQUEST_ID
           -Dsonar.github.repository=myOrganisation/myProject
