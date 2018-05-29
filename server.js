@@ -18,8 +18,6 @@ process.addListener("uncaughtException", function(err, stack) {
 
 var connect = require("connect");
 
-console.log(connect);
-
 var express = require("express");
 var assetManager = require("connect-assetmanager");
 var assetHandler = require("connect-assetmanager-handlers");
