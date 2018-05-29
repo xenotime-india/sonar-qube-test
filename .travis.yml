@@ -1,9 +1,6 @@
 language: node_js
 addons:
-  sonarcloud: true
-
-env:
-  SONAR_SERVER: "https://sonar.appirio.com"
+  sonarqube: true
 
 script:
   # other script steps might be done before running the actual SonarQube analysis
@@ -12,8 +9,8 @@ script:
     -Dsonar.analysis.mode=preview
     -Dsonar.projectKey=sandeep-digital-sonar-test1
     -Dsonar.projectName=sandeep-digital-sonar-test1
-    -Dsonar.host.url=https://sonar.appirio.com
-    -Dsonar.github.oauth=922e8ecf4e27e5d76aa0c0ef9237fe7a3a9f892e
+    -Dsonar.host.url=$SONAR_SERVER
+    -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
     -Dsonar.github.repository=xenotime-india/sonar-qube-test
-    -Dsonar.login=b636f8406b96bddae98ddb356c3ba34770685bdc
+    -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
     -Dsonar.github.pullRequest=$PULL_REQUEST_ID
