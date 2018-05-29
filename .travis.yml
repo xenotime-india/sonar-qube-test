@@ -3,7 +3,6 @@ addons:
   sonarqube: true
 
 script:
-  # other script steps might be done before running the actual SonarQube analysis
   - sonar-scanner 
     -Dsonar.sources=.
     -Dsonar.analysis.mode=preview
