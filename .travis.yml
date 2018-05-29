@@ -1,7 +1,15 @@
 language: node_js
-script: -Dsonar.analysis.mode=preview
-        -Dsonar.github.pullRequest=$PULL_REQUEST_ID
-        -Dsonar.github.repository=myOrganisation/myProject
-        -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
-        -Dsonar.host.url=https://server/sonarqube
-        -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
+addons:
+  sonarqube: true
+
+script:
+  - sonar-scanner 
+    -Dsonar.sources=.
+    -Dsonar.analysis.mode=preview
+    -Dsonar.projectKey=sandeep-digital-sonar-test1
+    -Dsonar.projectName=sandeep-digital-sonar-test1
+    -Dsonar.host.url=$SONAR_SERVER
+    -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN
+    -Dsonar.github.repository=xenotime-india/sonar-qube-test
+    -Dsonar.login=$SONARQUBE_ACCESS_TOKEN
+    -Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
