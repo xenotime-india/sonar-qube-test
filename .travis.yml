@@ -14,7 +14,7 @@ script:
     -Dsonar.analysis.mode=preview 
     -Dsonar.projectKey=sandeep-digital-sonar-test1 
     -Dsonar.projectName=sandeep-digital-sonar-test1 
-    -Dsonar.host.url=$SONAR_SERVER 
-    -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN 
-    -Dsonar.login=$SONARQUBE_ACCESS_TOKEN 
-    -Dsonar.github.pullRequest=$PULL_REQUEST_ID
+    -Dsonar.host.url=SONAR_SERVER 
+    -Dsonar.github.oauth=GITHUB_ACCESS_TOKEN 
+    -Dsonar.login=SONARQUBE_ACCESS_TOKEN 
+    -Dsonar.github.pullRequest=PULL_REQUEST_ID
