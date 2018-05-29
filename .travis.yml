@@ -1,8 +1,10 @@
-language: java
-sudo: false
-install: true
-
-jdk:
-  - oraclejdk8
-
-script: ./travis.sh
+language: node_js
+node_js:
+  - "6"  
+addons:
+  sonarqube: true
+env:
+  SONAR_TOKEN: $SONARQUBE_ACCESS_TOKEN 
+script:
+  # other script steps might be done before running the actual SonarQube analysis
+  - sonar-scanner -Dsonar.analysis.mode=preview -Dsonar.host.url=https://server/sonarqube -Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN -Dsonar.login=$SONARQUBE_ACCESS_TOKEN -Dsonar.github.pullRequest=$PULL_REQUEST_ID
